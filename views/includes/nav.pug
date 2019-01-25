@@ -1,0 +1,14 @@
+nav.navbar(role='navigation', aria-label='main navigation').is-fixed-top.is-dark
+ div.container
+  .navbar-brand
+    a.navbar-item(href='/')
+      h1.is-uppercase.has-text-light.is-size-5 MOH
+      h1.is-uppercase.has-text-info.is-size-5 RCON
+      h1.is-uppercase.has-text-danger.is-size-5 NODE
+    a.navbar-burger.burger(role='button', aria-label='menu', aria-expanded='false', data-target='navbar')
+      span(aria-hidden='true')
+      span(aria-hidden='true')
+      span(aria-hidden='true')
+  #navbar.navbar-menu
+    .navbar-start
+      a.navbar-item(href='/') Home

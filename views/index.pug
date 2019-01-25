@@ -1,0 +1,18 @@
+doctype html
+html
+  include includes/head.pug
+  body
+    include includes/nav.pug
+    block content
+      section.section
+        div.container
+          .field.has-addons
+            .control.is-expanded
+              input.input(type='text', placeholder='Search for maps, mods, patches, tools, ...').is-fullwidth
+            .control
+              a.button.is-info Search
+    block content
+      section.section
+        div.container
+
+include includes/foot.pug
