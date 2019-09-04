@@ -1,21 +1,27 @@
 'use strict'
 
 const dgram = require('dgram');
-const _buffer = '\xFF\xFF\xFF\xFF\x02rcon '
-
+const _buffer = "\xFF\xFF\xFF\xFF\x02";
 
 module.exports = {
   sendRcon: function (ip, port, password, command) {
     var client = dgram.createSocket('udp4');
+    var sendMessage =  Buffer.from(_buffer + command, "binary");
 
-    client.on("message", function(message, rinfo) {
-      console.log("received: ",message.toString('utf8'),rinfo);
+    client.send(sendMessage, 0, sendMessage.length, port, ip, function(err, bytes) {
+      if (err) return err;
+        console.log('UDP message sent to ' + ip +':'+ port);
     });
 
-      client.send(_buffer + command, 0, _buffer.length + command.length, port, ip, function(err, bytes) {
-    if (err) throw err;
-      console.log('UDP message sent to ' + ip +':'+ port);
-});
+    client.on('error', function(e) {
+      console.log(e);
+      return e;
+    });
+
+    client.on("message", function(message, rinfo) {
+      console.log("received: ",message.toString('utf8').substring(4),rinfo);
+      return message.toString('utf8').substring(4);
+    });
 
 }
 }

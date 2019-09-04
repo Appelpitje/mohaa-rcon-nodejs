@@ -8,7 +8,7 @@ exports.showFrontpage = (req, res) => {
 
 
 exports.handleRCON = (req, res) => {
-  const ipaddress = eq.body.ipaddress;
+  const ipaddress = eq.body.ip;
   const port = req.body.port;
   const password = req.body.password;
   const command = req.body.command;

@@ -3,16 +3,21 @@ html
   include includes/head.pug
   body
     include includes/nav.pug
+    section.section
     block content
       section.section
         div.container
-          .field.has-addons
-            .control.is-expanded
-              input.input(type='text', placeholder='Search for maps, mods, patches, tools, ...').is-fullwidth
-            .control
-              a.button.is-info Search
-    block content
-      section.section
-        div.container
+            .field.has-addons.is-grouped
+              .control
+                input.input(type='text', placeholder='IP', name='ip')
+              .control
+                input.input(type='text', placeholder='port', name='port')
+              .control
+                input.input(type='password', placeholder='password', name='password')    
+              .control
+                input.input(type='text', placeholder='command', name='command')
+              .control
+                button.button.is-primary(type='submit') Send   
+
 
 include includes/foot.pug

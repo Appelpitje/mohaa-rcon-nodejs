@@ -16,6 +16,7 @@
   "dependencies": {
     "express": "^4.16.4",
     "helmet": "^3.14.0",
+    "lupus": "0.0.1",
     "pug": "^2.0.3"
   }
 }
