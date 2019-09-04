@@ -6,7 +6,7 @@ const _buffer = "\xFF\xFF\xFF\xFF\x02";
 module.exports = {
   sendRcon: function (ip, port, password, command) {
     var client = dgram.createSocket('udp4');
-    var sendMessage =  Buffer.from(_buffer + command, "binary");
+    var sendMessage =  Buffer.from(_buffer + "rcon " +  password +" "+ command, "binary");
 
     client.send(sendMessage, 0, sendMessage.length, port, ip, function(err, bytes) {
       if (err) return err;

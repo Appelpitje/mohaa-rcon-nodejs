@@ -25,4 +25,4 @@ var server = app.listen(3000, function () {
 })
 
 
-  Rcontest.sendRcon('185.107.96.227', "12203", '', 'getstatus');
+  Rcontest.sendRcon('2.83.61.190', "12205", '12345', 'status');
